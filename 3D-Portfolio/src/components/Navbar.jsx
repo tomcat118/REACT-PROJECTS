@@ -1,3 +1,5 @@
+/*track where we are at the screen */
+  
 import React,{useEffect, useState} from 'react'
 import {Link} from 'react-router-dom';
 
@@ -6,9 +8,7 @@ import {navLinks} from '../constants';
 import {logo, menu, close} from '../assets';
 
 const Navbar = () => {
-  /*track where we are at the screen */
-  /* line 32- give each section in nav its title,
-          and after click, cha nge url endpoint to link's id */
+  
   const [active, setActive] = useState('`');
   const [toggle, setToggle] = useState(false);
   return (
@@ -30,9 +30,10 @@ const Navbar = () => {
         >
             <img src = {logo} alt ="logo" className ="w-9 h-9 object-contain" />
             <p className ="text-white text-[18px] font-bold cursor-pointer flex">Tommy &nbsp;<span className ="sm:block hidden">| Kaiyang Zhao's Portfolio</span></p>
-
-        </Link>
         
+        </Link>
+        {/*give each link in navBar its title,
+          and after click, cha nge url endpoint to link's id */}
         <ul className ="list-none hidden sm:flex flex-row gap-10">
           
           {navLinks.map((link) =>(
@@ -49,17 +50,17 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        
+        {/*responsive design that shows condensced navbar when screen shrank */}
           <div className = "sm:hidden flex flex-1 justify-end items-center">
             <img
             src = {toggle ? close : menu} 
             alt = 'menu'
-            className ="w-[28px] h-[28px]
+            className ="w-[28px] h-[28px
             object-contain"
             onClick = {() => setToggle(!toggle)}
             />
             
-
+          {/*when clicked on toggle icon, display the menu and click again to close the menu*/}
             <div className = {`${!toggle ? 'hidden' : "flex"} p-6 black-gradient absolute 
             top-20 right-0 mx-4 my-2 min-w-[140px] 
             z-10 rounded-xl`}>
