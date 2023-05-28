@@ -9,6 +9,7 @@ import { store } from './redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    {/* store.js would contain data that fecthed from APIs*/}
     <Provider store={store}>
       <Router>
         <App />
