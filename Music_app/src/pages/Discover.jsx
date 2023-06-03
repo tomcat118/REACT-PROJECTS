@@ -6,7 +6,9 @@ const Discover = () => {
     const { data, isFetching, error} = useGetTopChartsQuery();
     const genreTitle = 'Pop';
     console.log(data);
+    {/* deal with rendering of display process and error occurs on front end  */}
     if(isFetching) return <Loader title ="loeading songs..."/>;
+    if (error) return <Error />
     return (
         <div className="flex flex-col">
         <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
@@ -25,7 +27,7 @@ const Discover = () => {
             
             {/*create 10 song cards to display data of songs to the card*/}
             <div className ="flex flex-wrap sm:justify-start justify-center gap-8">
-                
+                {/* if data array exists, map each song and ID into the songcard */}
                 {data?.map((song, i) => (
                 <SongCard 
                     key = {song.key}
