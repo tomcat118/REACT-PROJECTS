@@ -5,6 +5,7 @@ const Discover = () => {
     {/* get the data and states from results of API call */}
     const { data, isFetching, error} = useGetTopChartsQuery();
     const genreTitle = 'Pop';
+    console.log(data);
     if(isFetching) return <Loader title ="loeading songs..."/>;
     return (
         <div className="flex flex-col">
@@ -21,9 +22,11 @@ const Discover = () => {
                 {genres.map((genre) => <option key = {genre.value} value ={genre.value}> {genre.title}</option>)}
             </select>
             </div>
+            
             {/*create 10 song cards to display data of songs to the card*/}
             <div className ="flex flex-wrap sm:justify-start justify-center gap-8">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((song, i) => (
+                
+                {data?.map((song, i) => (
                 <SongCard 
                     key = {song.key}
                     song = {song}

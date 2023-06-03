@@ -18,7 +18,7 @@ const options = {
         reducerPath: 'shazamCoreApi',
         baseQuery: fetchBaseQuery({
             baseUrl: 'https://shazam-core.p.rapidapi.com/v1',
-            prepareHeaders: () => {
+            prepareHeaders: (headers) => {
                 headers.set('X-RapidAPI-key', 'c0fed0d8d0msh5230d26a99c651ap11a6e5jsn2ad74256565f');
 
                 return headers;
