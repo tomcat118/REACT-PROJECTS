@@ -143,7 +143,8 @@ register for rapidAPI and shazam core,
 generate code snippets and copy to a js file
 wraps around routers with <Provder store ={store}> in the index.html
 add a reducer in store.js a shazamAPI
-Then display the logo images, titles, and the Song Artist in each songcard
+
+Then display the logo images, titles, and the Song Artist in each songcard 
 
 
 ### allow music to play and pause
