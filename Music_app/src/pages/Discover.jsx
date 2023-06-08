@@ -1,7 +1,15 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Error, Loader, SongCard } from '../components';
 import { genres } from '../assets/constants';
 import { useGetTopChartsQuery } from '../redux/services/shazamCore';
-const Discover = () => {
+
+
+//handle states of song play or stop
+const Discover = (song, isPlaying, activeSong) => {
+    {/* dispatch would taken input an object and look through all actions of its state */}
+    const dispatch = useDispatch();
+    {/* select a specific branch or object of a state from Playerslice.js*/}
+    const { } = useSelector((state) => state.player);
     {/* get the data and states from results of API call */}
     const { data, isFetching, error} = useGetTopChartsQuery();
     const genreTitle = 'Pop';
@@ -33,6 +41,9 @@ const Discover = () => {
                     key = {song.key}
                     song = {song}
                     i ={i}
+                    isPlaying = {isPlaying}
+                    activeSong = {activeSong}
+                    data = {data}
                 />
                 ))}
        
