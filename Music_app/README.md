@@ -136,13 +136,22 @@ Here we are going to focus on 2. Creating a Topical Branch:
 ## Instruction on reading the codes and programming the website app
 
 ### Display SongCards
-
+Discover.jsx, in Songcard section, for each song in the data, create a songcard component
 
 ### fetch data from RapidAPI ShaZam Core
+register for rapidAPI and shazam core,
+generate code snippets and copy to a js file
+wraps around routers with <Provder store ={store}> in the index.html
+add a reducer in store.js a shazamAPI
+Then display the logo images, titles, and the Song Artist in each songcard
+
 
 ### allow music to play and pause
+in SongCard.jsx
 
 ### music player 
+view the componenets inside Musicplayer folder to see details
+### side bar
 
 ### Search Bar (search engine)
 
@@ -150,4 +159,3 @@ Here we are going to focus on 2. Creating a Topical Branch:
 
 ### Top Artists ()
 
-### Nav Menu 

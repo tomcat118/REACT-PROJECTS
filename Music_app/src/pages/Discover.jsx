@@ -33,7 +33,7 @@ const Discover = (song, isPlaying, activeSong) => {
             </select>
             </div>
             
-            {/*create 10 song cards to display data of songs to the card*/}
+            {/*create song cards to display data of songs to the card*/}
             <div className ="flex flex-wrap sm:justify-start justify-center gap-8">
                 {/* if data array exists, map each song and ID into the songcard */}
                 {data?.map((song, i) => (
