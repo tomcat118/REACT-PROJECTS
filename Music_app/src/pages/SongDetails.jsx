@@ -13,28 +13,28 @@ const SongDetails = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   {/* hooks that fetch data from API calls and store in variables, with songid help identify which song we're fetching */}
-  const { data, isFetching: isFetchinRelatedSongs, error } = useGetSongRelatedQuery({ songid });
   const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid });
 
   {/* handle loading page when Fetching data */}
-  //if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searching song details" />;
+ if (isFetchingSongDetails) return <Loader title="Loading song details" />;
 
-  console.log(data)
-  
+ console.log(songid);
+ //console.log(songRelate);
 
-  //if (error) return <Error />;
-  
-//   const handlePauseClick = () => {
-//     dispatch(playPause(false));
-//   };
+  // if (error) return <Error />;
 
-//   {/* dispatch to play specific song */}
-//   const handlePlayClick = (song, i) => {
-//     dispatch(setActiveSong({ song, data, i }));
-//     dispatch(playPause(true));
-//   };
+  const handlePauseClick = () => {
+    dispatch(playPause(false));
+  };
 
+  {/* dispatch to play specific song */}
+  const handlePlayClick = (song, i) => {
+    dispatch(setActiveSong({ song, songRelate, i }));
+    dispatch(playPause(true));
+  };
+ 
   return (
+    // the detailsHeader inputs fetched artistId and songData, then renders the artisttitle and images for each artistId
     <div className="flex flex-col">
       <DetailsHeader
         artistId={artistId}
@@ -55,15 +55,15 @@ const SongDetails = () => {
             )}
         </div>
       </div>
-//     {/* section handles data of related songs */}
-//       {/* <RelatedSongs
-//         data={data}
-//         artistId={artistId}
-//         isPlaying={isPlaying}
-//         activeSong={activeSong}
-//         handlePauseClick={handlePauseClick}
-//         handlePlayClick={handlePlayClick}
-//       /> */}
+     {/* section handles data of related songs */}
+      {/* <RelatedSongs
+        data={songRelate}
+        artistId={artistId}
+        isPlaying={isPlaying}
+        activeSong={activeSong}
+        handlePauseClick={handlePauseClick}
+        handlePlayClick={handlePlayClick}
+       /> */}
 </div>
 
   );
