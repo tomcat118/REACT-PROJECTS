@@ -86,6 +86,7 @@ const TopPlay = () => {
           </div>
         </div>
           
+        {/* Top Artists section with a swipable section */}
         <div className = "w-full flex flex-col mt-8">
         <div className = "flex flex-row justify-between items-center">
             <h2 className = "text-white font-bold text-2xl"> Top Artists</h2>
@@ -93,6 +94,7 @@ const TopPlay = () => {
               <p className = "text-gray-300 text-base cursor-pointer">See more</p>
             </Link>
           </div>
+          {/*Swiper component that allows swiping through components of artitss */}
           <Swiper
             slidesPerView = "auto"
             spaceBetween = {15}
@@ -102,14 +104,15 @@ const TopPlay = () => {
             modules = {[FreeMode]}
             className = "mt-4"
           >
-            {topPlays?.slice(0, 5).map((artist) => (
+            {/* turn array of first five objects into individual one, and pass each as "artist" */}
+            {topPlays?.map((song, i) => (
               <SwiperSlide
-                key ={artist?.key}
+                key ={song?.key}
                 style = {{ width: `25%` , height: `auto`}}
                 className = "shadow-lg rounded-full animate-slideright"
               >
-                <Link to = {`/artists/${artist?.artists[0].adamid}`}>
-                  <img src = {artist?.images.background} alt = "name" className = "rounded-full w-full object-cover" />
+                <Link to = {`/artists/${song?.artists[0].adamid}`}>
+                  <img src = {song?.images.background} alt = "name" className = "rounded-full w-full object-cover" />
                 </Link>
               </SwiperSlide>
             ))}

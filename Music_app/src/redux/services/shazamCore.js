@@ -28,8 +28,8 @@ const options = {
         //query defined as a function that return data from an endpoint
         endpoints: (builder) => ({
             getTopCharts: builder.query({query: () => '/charts/world'}),
-            getSongDetails: builder.query({ query: ({songid}) => `/tracks/details?track_id=${songid}`}),
-            getSongRelated: builder.query({query : () => `/tracks/related?track_id =$ {songid}`}),
+            getSongDetails: builder.query({ query : ({songid}) => `/tracks/details?track_id=${songid}`}),
+            getSongRelated: builder.query({ query : ({songid}) => `/tracks/related?track_id = ${songid}`}),
         }),
     })
 

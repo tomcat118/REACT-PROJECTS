@@ -8,7 +8,7 @@ const DetailsHeader = ({ artistId, artistData, songData}) => {
       <div className = "absolute insert-0 flex items-center">
         <img 
           alt = "art"
-          src ={artistId ? artistData?.artists[artistId].attributes?.artwork?.url.replace('{w}','500').replace('{h}', '500'):
+          src ={artistId ? artist.artwork?.url.replace('{w}','500').replace('{h}', '500'):
         songData?.images?.coverart}
           className = "sm:w-48 w-28 sm:h-48 h-28 rounded-full object-cover border-2 shadow-xl shadow-black"
         />

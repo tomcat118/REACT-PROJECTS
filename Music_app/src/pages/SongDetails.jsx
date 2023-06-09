@@ -17,32 +17,33 @@ const SongDetails = () => {
   const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid });
 
   {/* handle loading page when Fetching data */}
-  if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searching song details" />;
+  //if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searching song details" />;
 
-  console.log(songData);
+  console.log(songData)
 
-  if (error) return <Error />;
+  //if (error) return <Error />;
+  
+//   const handlePauseClick = () => {
+//     dispatch(playPause(false));
+//   };
 
-  const handlePauseClick = () => {
-    dispatch(playPause(false));
-  };
-
-  {/* dispatch to play specific song */}
-  const handlePlayClick = (song, i) => {
-    dispatch(setActiveSong({ song, data, i }));
-    dispatch(playPause(true));
-  };
+//   {/* dispatch to play specific song */}
+//   const handlePlayClick = (song, i) => {
+//     dispatch(setActiveSong({ song, data, i }));
+//     dispatch(playPause(true));
+//   };
 
   return (
-    <div className="flex flex-col">
-      <DetailsHeader
-        artistId={artistId}
-        songData={songData}
-      />
+//     <div className="flex flex-col">
+//       {/* <DetailsHeader
+//         artistId={artistId}
+//         songData={songData}
+//       /> */}
 
-      <div className="mb-10">
+<div className="mb-10">
         <h2 className="text-white text-3xl font-bold">Lyrics:</h2>
-        {/* display each line of lyrics with each p tag */}
+
+    {/* display the Lyrics by line/tag if there's a LYRICS section in each songData object */}
         <div className="mt-5">
           {songData?.sections[1].type === 'LYRICS'
             ? songData?.sections[1]?.text.map((line, i) => (
@@ -53,18 +54,17 @@ const SongDetails = () => {
             )}
         </div>
       </div>
-    {/* section handles data of related songs */}
-      <RelatedSongs
-        data={data}
-        artistId={artistId}
-        isPlaying={isPlaying}
-        activeSong={activeSong}
-        handlePauseClick={handlePauseClick}
-        handlePlayClick={handlePlayClick}
-      />
+//     {/* section handles data of related songs */}
+//       {/* <RelatedSongs
+//         data={data}
+//         artistId={artistId}
+//         isPlaying={isPlaying}
+//         activeSong={activeSong}
+//         handlePauseClick={handlePauseClick}
+//         handlePlayClick={handlePlayClick}
+//       /> */}
+//</div>
 
-    </div>
-   
   );
 };
 
