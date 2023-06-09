@@ -132,6 +132,9 @@ Here we are going to focus on 2. Creating a Topical Branch:
 7. Click on the `Submit` button.
 
 8. You have successfully created a pull request. Now wait for mentor approval. Once approved, you can merge the pull request.
+## Technology
+### react-redux
+import simple, reusable components that manage various states, shared by different components
 
 ## Instruction on reading the codes and programming the website app
 
@@ -152,7 +155,16 @@ in SongCard.jsx
 
 ### music player 
 view the componenets inside Musicplayer folder to see details
+
+### scroll-view effect for TopPlay
+import useRef and set it to a default value
+useEffect that applies a scroll-view js effect onto entire page 
+
 ### side bar
+create distinct section for Top Charts and Top artists
+each section display top five songCards and top five artistCards as well as their title and background image
+
+
 
 ### Search Bar (search engine)
 

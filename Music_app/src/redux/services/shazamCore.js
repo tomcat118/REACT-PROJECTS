@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+{/* API call to shazamCore to fetch data */}
 const options = {
     method: 'GET',
     headers: {
@@ -27,9 +28,13 @@ const options = {
         //query defined as a function that return data from an endpoint
         endpoints: (builder) => ({
             getTopCharts: builder.query({query: () => '/charts/world'}),
+            getSongDetails: builder.query({ query: ({songid}) => `/tracks/details?track_id=${songid}`}),
+            getSongRelated: builder.query({query : () => `/tracks/related?track_id =$ {songid}`}),
         }),
     })
 
     export const {
         useGetTopChartsQuery,
+        useGetSongDetailsQuery,
+        useGetSongRelatedQuery,
     } = shazamCoreApi;
