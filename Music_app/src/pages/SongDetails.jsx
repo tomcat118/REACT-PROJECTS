@@ -19,7 +19,8 @@ const SongDetails = () => {
   {/* handle loading page when Fetching data */}
   //if (isFetchingSongDetails && isFetchinRelatedSongs) return <Loader title="Searching song details" />;
 
-  console.log(songData)
+  console.log(data)
+  
 
   //if (error) return <Error />;
   
@@ -34,11 +35,11 @@ const SongDetails = () => {
 //   };
 
   return (
-//     <div className="flex flex-col">
-//       {/* <DetailsHeader
-//         artistId={artistId}
-//         songData={songData}
-//       /> */}
+    <div className="flex flex-col">
+      <DetailsHeader
+        artistId={artistId}
+        songData={songData}
+      />
 
 <div className="mb-10">
         <h2 className="text-white text-3xl font-bold">Lyrics:</h2>
@@ -63,7 +64,7 @@ const SongDetails = () => {
 //         handlePauseClick={handlePauseClick}
 //         handlePlayClick={handlePlayClick}
 //       /> */}
-//</div>
+</div>
 
   );
 };
